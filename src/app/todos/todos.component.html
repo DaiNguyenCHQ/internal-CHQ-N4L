@@ -1,1 +1,29 @@
-<p>todos works!</p>
+<div>
+  <mat-card class="todos__container">
+    <mat-card-header>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Check all"
+        fontIcon="keyboard_arrow_down"
+        class="todos__check-all"
+      ></mat-icon>
+      <form class="todos__form">
+        <mat-form-field
+          class="todos__add-item-form-field"
+          subscriptSizing="dynamic"
+        >
+          <mat-label>What needs to be done?</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
+      </form>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <app-todo-summary></app-todo-summary>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+</div>

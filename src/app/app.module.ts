@@ -5,18 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { TodosComponent } from './todos/todos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TodosModule } from './todos/todos.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TodosComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    BrowserAnimationsModule,
+    TodosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

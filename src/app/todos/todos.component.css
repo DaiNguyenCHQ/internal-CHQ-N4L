@@ -1,0 +1,28 @@
+.todos__container {
+  max-width: 400px;
+}
+
+.todos__form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.todos__add-item-form-field {
+  width: 100%;
+  opacity: 0.5;
+  margin-left: 0;
+  padding-top: 0;
+  border: none;
+}
+
+.todos__check-all {
+  transform: scale(1.5);
+  opacity: 0.3;
+  align-self: center;
+}
+
+.mat-mdc-card-header {
+  padding: 0;
+}
+
