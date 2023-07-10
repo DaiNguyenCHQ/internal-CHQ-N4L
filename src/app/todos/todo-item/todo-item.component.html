@@ -1,13 +1,6 @@
-<div class="todo-item__container">
-  <input type="checkbox" checked id="todo-item-checkbox1" />
-  <label for="todo-item-checkbox1"></label>
-  <span class="todo-item__text">This is my todo 1</span>
-  <hr />
-</div>
-
-<div class="todo-item__container">
-  <input type="checkbox" checked id="todo-item-checkbox2" />
-  <label for="todo-item-checkbox2"></label>
-  <span class="todo-item__text" id="todo-item__text">This is my todo 1</span>
+<div class="todo-item__container" *ngIf="todo">
+  <input type="checkbox" [checked]="isCompleted" [id]="'todo-item-' + todo.id" />
+  <label [for]="'todo-item-' + todo.id"></label>
+  <span class="todo-item__text">{{ todo.title }}</span>
   <hr />
 </div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Todo } from '../models/todo.model';
 
 @Component({
   selector: 'app-todo-item',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent {
+  @Input() todo: Todo | undefined;
 
+  get isCompleted(): boolean {
+    return this.todo?.status === 'completed';
+  }
 }

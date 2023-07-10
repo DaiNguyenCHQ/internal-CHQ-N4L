@@ -6,6 +6,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoSummaryComponent } from './todo-summary/todo-summary.component';
 import { TodoActionComponent } from './todo-action/todo-action.component';
+import { RouterModule } from '@angular/router';
+import { TodosRoutingModule } from './todos-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { TodoActionComponent } from './todo-action/todo-action.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    TodosRoutingModule
   ]
 })
 export class TodosModule { }

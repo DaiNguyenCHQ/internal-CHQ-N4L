@@ -1,11 +1,33 @@
 <div class="todos-summarry__container">
   <div><small id="todos-summarry__item-left">1 item left</small></div>
   <div class="todos-summarry__filter">
-    <span><small id="todos-summarry__filter-all">All</small></span>
-    <span><small id="todos-summarry__filter-active">Active</small></span>
-    <span><small id="todos-summarry__filter-completed">Completed</small></span>
+    <span>
+      <a
+        [routerLink]="'/todos'"
+        [class.todos-summarry__filter-active-link]="isDefaultLink"
+        ><small id="todos-summarry__filter-all">All</small></a
+      >
+    </span>
+    <span>
+      <a
+        [routerLink]="'/todos/active'"
+        routerLinkActive="todos-summarry__filter-active-link"
+        ><small id="todos-summary__filter-active">Active</small></a
+      >
+    </span>
+    <span>
+      <a
+        [routerLink]="'/todos/completed'"
+        routerLinkActive="todos-summarry__filter-active-link"
+        ><small id="todos-summary__filter-completed">Completed</small></a
+      >
+    </span>
   </div>
   <div>
-    <span><small id="todos-summarry__clear-completed">Clear completed</small></span>
+    <span>
+      <button class="todos-summarry__clear-completed">
+        <small id="todos-summarry__clear-completed">Clear completed</small>
+      </button>
+    </span>
   </div>
 </div>
