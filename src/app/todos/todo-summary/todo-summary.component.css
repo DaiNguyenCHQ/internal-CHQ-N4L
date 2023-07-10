@@ -1,3 +1,14 @@
-:ng-deep .mat-dialog-content {
-  overflow-y: hidden !important;
+.todos-summarry__container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  margin: 10px;
+  color: #777777;
+}
+
+.todos-summarry__filter > span{
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; */
+  margin-left: 32px;
 }

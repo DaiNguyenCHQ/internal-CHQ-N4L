@@ -1,0 +1,24 @@
+.todo-action__container {
+  display: grid;
+  grid-template-columns: 1fr 13fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+  margin: 10px;
+}
+
+.todo-action__check-all {
+  margin: 4px 0 0 6px;
+  color: #737373;
+}
+
+.todo-action__input input[type="text"] {
+  font-size: 24px;
+  border: none;
+  outline: none;
+}
+
+.todo-action__input input[type="text"]::placeholder {
+  opacity: 0.2;
+  font-style: italic;
+}

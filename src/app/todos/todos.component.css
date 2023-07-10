@@ -1,28 +1,17 @@
-.todos__container {
-  max-width: 400px;
+.todos__title {
+  text-align: center;
+  font-size: 88px;
+  color: #ead7d7;
 }
 
-.todos__form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+.todos-card__container {
+  max-width: 550px;
+  border: 1px solid #ead7d7;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.todos__add-item-form-field {
-  width: 100%;
-  opacity: 0.5;
-  margin-left: 0;
-  padding-top: 0;
-  border: none;
+.todos-card__container hr {
+  border-color: #ededed;
+  opacity: 0.4;
 }
-
-.todos__check-all {
-  transform: scale(1.5);
-  opacity: 0.3;
-  align-self: center;
-}
-
-.mat-mdc-card-header {
-  padding: 0;
-}
-
