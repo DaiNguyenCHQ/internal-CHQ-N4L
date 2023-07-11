@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable, Subject, Subscription, filter, startWith, takeUntil } from 'rxjs';
 import { TodoActions } from '../state/todos.actions';
 import { Todo } from '../models/todo.model';
-import { selectActiveTodos, selectAllTodos } from '../state/todos.selectors';
+import { selectActiveTodos, selectAllTodos, selectCompletedTodos } from '../state/todos.selectors';
 
 @Component({
   selector: 'app-todo-summary',
@@ -13,9 +13,12 @@ import { selectActiveTodos, selectAllTodos } from '../state/todos.selectors';
 })
 export class TodoSummaryComponent implements OnInit, OnDestroy {
   isDefaultLink: boolean | undefined;
+  itemLeftText: string | undefined;
+  hasCompletedTodos: boolean = false;
+
   private destroy$: Subject<void> = new Subject<void>();
   private activeTodosSubscription: Subscription | undefined;
-  itemLeftText: string | undefined;
+  private completedTodosSubscription: Subscription | undefined;
 
   constructor(private router: Router, private store: Store) { }
 
@@ -34,6 +37,10 @@ export class TodoSummaryComponent implements OnInit, OnDestroy {
 
     this.activeTodosSubscription = this.store.select(selectActiveTodos).subscribe((todos) => {
       this.itemLeftText = `${todos.length} item${todos.length === 1 ? '' : 's'} left`;
+    });
+
+    this.completedTodosSubscription = this.store.select(selectCompletedTodos).subscribe((todos) => {
+      this.hasCompletedTodos = todos.length > 0;
     });
   }
 
