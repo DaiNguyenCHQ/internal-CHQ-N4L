@@ -1,6 +1,24 @@
 <div class="todo-item__container" *ngIf="todo">
-  <input type="checkbox" [checked]="isCompleted" [id]="'todo-item-' + todo.id" />
-  <label [for]="'todo-item-' + todo.id"></label>
-  <span class="todo-item__text">{{ todo.title }}</span>
+  <input
+    type="checkbox"
+    [checked]="isCompleted"
+    [id]="'todo-item-' + todo._id"
+    (change)="handleCheck($event)"
+  />
+  <label [for]="'todo-item-' + todo._id"></label>
+  <span class="todo-item__text" (dblclick)="editMode = true" *ngIf="!editMode">
+    {{ todo.title }}
+  </span>
+  <input
+    type="text"
+    class="todo-item__text-input"
+    *ngIf="editMode"
+    [value]="todo.title"
+    (keydown.enter)="saveText()"
+    (blur)="saveText()"
+    #editInput
+  />
+  <span class="todo-item__delete" hidden (click)="handleDelete()">
+    <i class="fas fa-times"></i></span>
   <hr />
 </div>

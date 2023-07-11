@@ -4,13 +4,14 @@
     <div class="todos-card__header">
       <app-todo-action></app-todo-action>
     </div>
-    <hr />
-    <div class="todos-card__content">
-      <!-- <app-todo-list></app-todo-list> -->
-      <router-outlet></router-outlet>
-    </div>
-    <div class="todo-card__summary">
-      <app-todo-summary></app-todo-summary>
-    </div>
+    <ng-container *ngIf="isDisplay">
+      <hr />
+      <div class="todos-card__content">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="todo-card__summary">
+        <app-todo-summary></app-todo-summary>
+      </div>
+    </ng-container>
   </div>
 </div>

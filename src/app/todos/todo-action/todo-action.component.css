@@ -10,6 +10,11 @@
 .todo-action__check-all {
   margin: 4px 0 0 6px;
   color: #737373;
+  opacity: 0.2;
+}
+
+.todo-action__check-all-hightlight {
+  opacity: 1;
 }
 
 .todo-action__input input[type="text"] {

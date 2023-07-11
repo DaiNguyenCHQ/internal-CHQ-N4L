@@ -19,11 +19,11 @@ export const todoReducer = createReducer(
     return newState;
   }),
   on(TodoActions.updateTodoSuccessfully, (state, { todo }) => {
-    const newState = state.map((t) => (t.id === todo.id ? todo : t));
+    const newState = state.map((t) => (t._id === todo._id ? todo : t));
     return newState;
   }),
   on(TodoActions.removeTodoSuccessfully, (state, { todoId }) => {
-    const newState = state.filter((todo) => todo.id !== todoId)
+    const newState = state.filter((todo) => todo._id !== todoId)
     return newState;
   }),
   on(TodoActions.clearCompletedTodosSuccessfully, (state) => {

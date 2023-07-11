@@ -91,4 +91,20 @@ export class TodoEffects {
       )
     )
   );
+
+  bulkUpdateStatus$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(TodoActions.bulkUpdateStatus),
+      exhaustMap((action) =>
+        this.todosService.bulkUpdateStatus(action.status).pipe(
+          map(() =>
+            TodoActions.retrieveTodos({ status: undefined })
+          ),
+          catchError((error: Error) =>
+            of(TodoActions.onError({ error }))
+          )
+        )
+      )
+    )
+  );
 }

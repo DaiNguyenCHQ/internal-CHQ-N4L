@@ -3,24 +3,18 @@ import { Injectable } from "@angular/core";
 import { Observable, from, map, of } from "rxjs";
 import { Todo } from "./models/todo.model";
 
-const BASE_URL = 'https://example.com/todos';
+const BASE_URL = 'http://localhost:3001/api/todos';
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {
   constructor(private http: HttpClient) { }
 
   retrieveTodos(status: "active" | "completed" | undefined): Observable<Array<Todo>> {
-    // const url = status ? `${BASE_URL}?status=${status}` : BASE_URL;
+    const url = status ? `${BASE_URL}?status=${status}` : BASE_URL;
 
-    // return this.http
-    //   .get<Todo[]>(url)
-    //   .pipe(map((todos) => todos || []));
-    const source: Array<Todo> = [
-      { id: "1", status: "active", title: "This is todo 1" },
-      { id: "2", status: "active", title: "This is todo 2" },
-      { id: "3", status: "completed", title: "This is todo 3" }
-    ];
-    return of(source);
+    return this.http
+      .get<Todo[]>(url)
+      .pipe(map((todos) => todos || []));
   }
 
   addTodo(todo: Todo) {
@@ -29,7 +23,7 @@ export class TodosService {
   }
 
   updateTodo(todo: Todo) {
-    const url = `${BASE_URL}/${todo.id}`;
+    const url = `${BASE_URL}/${todo._id}`;
     return this.http.put(url, todo);
   }
 
@@ -41,5 +35,10 @@ export class TodosService {
   clearCompletedTodo() {
     const url = `${BASE_URL}/clear`;
     return this.http.delete(url);
+  }
+
+  bulkUpdateStatus(status: "active" | "completed") {
+    const url = `${BASE_URL}/bulk-update-status`;
+    return this.http.patch(url, { status });
   }
 }

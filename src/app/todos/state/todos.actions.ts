@@ -14,6 +14,7 @@ export const TodoActions = createActionGroup({
     'Remove Todo Successfully': props<{ todoId: string }>(),
     'Clear Completed Todos': emptyProps(),
     'Clear Completed Todos Successfully': emptyProps(),
+    'Bulk Update Status': props<{ status: "active" | "completed" }>(),
     'On Error': props<{ error: Error }>(),
   },
 });
