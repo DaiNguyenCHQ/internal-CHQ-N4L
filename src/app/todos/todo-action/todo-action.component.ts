@@ -15,7 +15,7 @@ export class TodoActionComponent implements OnInit, OnDestroy {
   todos$: Observable<ReadonlyArray<Todo>> | undefined;
   completedTodos$: Observable<ReadonlyArray<Todo>> | undefined;
   allCompleted: boolean = false;
-  private hasTodos: boolean = false;
+  hasTodos: boolean = false;
   private subscription: Subscription | undefined;
 
   constructor(private store: Store) { }
