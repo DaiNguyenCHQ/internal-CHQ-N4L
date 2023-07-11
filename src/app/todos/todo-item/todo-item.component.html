@@ -1,4 +1,4 @@
-<div class="todo-item__container" *ngIf="todo">
+<div class="todo-item__container" *ngIf="todo" [class.todo-item__isCompleted]="isCompleted">
   <input
     type="checkbox"
     [checked]="isCompleted"
